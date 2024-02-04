@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Will You Be My Valentine?</title>
+</head>
+<body>
+
+  <div class="container">
+    <img src="https://tenor.com/view/heart-love-cat-kawaii-cute-gif-8446829684698946759" alt="Will you be my valentine?">
+    <div class="buttons">
+      <button id="yesButton" onclick="showConfirmation()">Yes</button>
+      <button id="noButton" onclick="showSadMessage()">No</button>
+    </div>
+    <div id="confirmation" class="hidden">
+      <p>Are you sure?</p>
+      <button onclick="showCryingMessage()">Yes</button>
+      <button onclick="hideConfirmation()">No</button>
+    </div>
+    <div id="sadMessage" class="hidden">
+      <p>I'm gonna cry. Answer correctly!</p>
+      <button onclick="showLoveMessage()">Just answer me correctly</button>
+    </div>
+    <div id="loveMessage" class="hidden">
+      <p>You can do this. I love you. Say Yes, please!</p>
+      <button onclick="showInstagramProfile()">Yes</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
