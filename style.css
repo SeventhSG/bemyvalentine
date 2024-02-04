@@ -17,6 +17,10 @@ img {
   height: auto;
 }
 
+h1 {
+  margin-top: 20px;
+}
+
 .buttons {
   margin-top: 20px;
 }
@@ -27,21 +31,11 @@ button {
   font-size: 16px;
 }
 
-#confirmation, #sadMessage, #loveMessage {
-  margin-top: 20px;
+#yesButton {
+  background-color: #4CAF50; /* Green */
+  color: white;
 }
 
-.hidden {
-  display: none;
-}
-
-/* Add these styles to make buttons grow and shrink */
-.grow {
-  transform: scale(1.2);
-  transition: transform 0.5s ease;
-}
-
-.shrink {
-  transform: scale(0.8);
-  transition: transform 0.5s ease;
+#noButton:hover {
+  cursor: pointer;
 }
