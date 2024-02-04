@@ -63,12 +63,16 @@
     function changeButtonSize() {
         var btnYes = document.getElementById('btn-yes');
         var btnNo = document.getElementById('btn-no');
+        var valentineText = document.getElementById('valentine-text');
 
-        btnYes.style.width = (btnYes.offsetWidth + 10) + 'px';
-        btnYes.style.height = (btnYes.offsetHeight + 5) + 'px';
+        btnYes.style.width = (btnYes.offsetWidth + 20) + 'px';
+        btnYes.style.height = (btnYes.offsetHeight + 10) + 'px';
 
-        btnNo.style.width = (btnNo.offsetWidth - 10) + 'px';
-        btnNo.style.height = (btnNo.offsetHeight - 5) + 'px';
+        btnNo.style.width = (btnNo.offsetWidth - 20) + 'px';
+        btnNo.style.height = (btnNo.offsetHeight - 10) + 'px';
+
+        // Adjust font size to stay within the button
+        valentineText.style.fontSize = (valentineText.offsetHeight * 0.7) + 'px';
     }
 </script>
 
