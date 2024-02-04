@@ -1,22 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Will You Be My Valentine?</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fce4ec; /* Light pink background color */
+        }
+
+        #valentine-container {
+            text-align: center;
+        }
+
+        #valentine-text {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        #valentine-gif {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        #btn-yes {
+            background-color: #4caf50; /* Green button color */
+            color: #fff;
+        }
+
+        #btn-no {
+            background-color: #f44336; /* Red button color */
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <img src="https://media.tenor.com/dTkq2FK0nMcAAAAi/heart-love.gif" alt="Heart gif">
-    <h1>Will you be my valentine?</h1>
-    <div class="buttons">
-      <button id="yesButton" onclick="redirectToInstagram()">Yes</button>
-      <button id="noButton" onclick="enlargeYesButton()">No</button>
-    </div>
-  </div>
+<div id="valentine-container">
+    <img id="valentine-gif" src="https://media.tenor.com/dTkq2FK0nMcAAAAi/heart-love.gif" alt="Heart GIF">
+    <div id="valentine-text">Will You Be My Valentine?</div>
+    <button id="btn-yes" class="btn" onclick="window.location.href='https://www.instagram.com/ozito77_/'">Yes</button>
+    <button id="btn-no" class="btn" onclick="changeButtonSize()">No</button>
+</div>
 
-  <script src="script.js"></script>
+<script>
+    function changeButtonSize() {
+        var btnYes = document.getElementById('btn-yes');
+        var btnNo = document.getElementById('btn-no');
+
+        btnYes.style.width = '150px';
+        btnYes.style.height = '50px';
+
+        btnNo.style.width = (btnNo.offsetWidth - 10) + 'px';
+        btnNo.style.height = (btnNo.offsetHeight - 5) + 'px';
+    }
+</script>
+
 </body>
 </html>
