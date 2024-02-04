@@ -3,5 +3,8 @@ function redirectToInstagram() {
 }
 
 function enlargeYesButton() {
-  document.getElementById('yesButton').classList.add('grow');
+  let yesButton = document.getElementById('yesButton');
+  let currentSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
+  let newSize = (parseFloat(currentSize) * 1.2) + 'px';
+  yesButton.style.fontSize = newSize;
 }
