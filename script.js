@@ -4,7 +4,6 @@ function redirectToInstagram() {
 
 function enlargeYesButton() {
   let yesButton = document.getElementById('yesButton');
-  let currentSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-  let newSize = (parseFloat(currentSize) * 1.2) + 'px';
-  yesButton.style.fontSize = newSize;
+  yesButton.style.transform = 'scale(1.2)';
+  redirectToInstagram();  // If you want to redirect to Instagram when "No" is clicked
 }
