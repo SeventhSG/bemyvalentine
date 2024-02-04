@@ -71,8 +71,9 @@
         btnNo.style.width = (btnNo.offsetWidth - 2) + 'px';
         btnNo.style.height = (btnNo.offsetHeight - 1) + 'px';
 
-        // Adjust font size to stay within the button
-        valentineText.style.fontSize = (parseInt(valentineText.style.fontSize) + 1) + 'px';
+        // Adjust font size and boldness for the "Yes" button text
+        btnYes.style.fontSize = (parseInt(window.getComputedStyle(btnYes).fontSize) + 1) + 'px';
+        btnYes.style.fontWeight = 'bold';
     }
 </script>
 
