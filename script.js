@@ -1,26 +1,41 @@
-function showConfirmation() {
-  document.getElementById('confirmation').classList.remove('hidden');
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
 }
 
-function hideConfirmation() {
-  document.getElementById('confirmation').classList.add('hidden');
+.container {
+  text-align: center;
 }
 
-function showSadMessage() {
-  document.getElementById('sadMessage').classList.remove('hidden');
-  document.getElementById('yesButton').classList.add('grow');
-  document.getElementById('noButton').classList.add('shrink');
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-function showCryingMessage() {
-  alert("Notification: She said 'No'.");
+h1 {
+  margin-top: 20px;
 }
 
-function showLoveMessage() {
-  document.getElementById('loveMessage').classList.remove('hidden');
+.buttons {
+  margin-top: 20px;
 }
 
-function showInstagramProfile() {
-  alert("Congratulations! She said 'Yes'!\nCheck out my Instagram profile: @ozito77_");
-  window.open("https://www.instagram.com/ozito77_", "_blank");
+button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+#yesButton {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+#noButton:hover {
+  cursor: pointer;
 }
