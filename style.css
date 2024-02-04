@@ -34,6 +34,7 @@ button {
 #yesButton {
   background-color: #4CAF50; /* Green */
   color: white;
+  transition: transform 0.5s ease;
 }
 
 #noButton:hover {
