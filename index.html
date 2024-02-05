@@ -79,6 +79,16 @@
         // Adjust font size and boldness for the "Yes" button text
         btnYes.style.fontSize = (parseInt(window.getComputedStyle(btnYes).fontSize) + 1) + 'px';
         btnYes.style.fontWeight = 'bold';
+
+        // Check if it's the 10th click on the "No" button
+        noButtonClickCount++;
+        if (noButtonClickCount === 10) {
+            redirectToAreYouSureScreen();
+        }
+    }
+
+    function redirectToAreYouSureScreen() {
+        window.location.href = 'areyousure.html';
     }
 </script>
 
