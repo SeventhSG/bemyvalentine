@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Really?</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #fce4ec; /* Light pink background color */
+            margin: 0;
+        }
+
+        #really-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #really-text {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        #really-gif {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn-really {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            width: 200px; /* Adjust the button width */
+        }
+
+        #btn-absolutely {
+            background-color: #ffd700; /* Gold button color */
+        }
+
+        #btn-nope {
+            background-color: #f44336; /* Red button color */
+        }
+    </style>
+</head>
+<body>
+
+<div id="really-container">
+    <div id="really-text">REALLY???</div>
+    <img id="really-gif" src="https://media1.tenor.com/m/tZVpbfTIjNMAAAAC/pikachu.gif" alt="Pikachu GIF">
+    <button id="btn-absolutely" class="btn-really" onclick="redirectToInstagram()">Absolutely</button>
+    <button id="btn-nope" class="btn-really" onclick="redirectToMainScreen()">Nope</button>
+</div>
+
+<script>
+    function redirectToInstagram() {
+        window.location.href = 'https://www.instagram.com/ozito77_/';
+    }
+
+    function redirectToMainScreen() {
+        window.location.href = 'index.html'; // Replace with the actual filename of your main screen
+    }
+</script>
+
+</body>
+</html>
