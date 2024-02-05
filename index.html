@@ -71,7 +71,7 @@
 <div id="valentine-container">
     <img id="valentine-gif" src="https://media.tenor.com/dTkq2FK0nMcAAAAi/heart-love.gif" alt="Heart GIF">
     <div id="valentine-text">Will You Be My Valentine?</div>
-    <button id="btn-yes" class="btn" onclick="window.location.href='https://www.instagram.com/ozito77_/'">Yes</button>
+    <button id="btn-yes" class="btn" onclick="redirectToReallyPage()">Yes</button>
     <button id="btn-no" class="btn" onclick="changeButtonSize()">No</button>
 </div>
 
@@ -107,6 +107,12 @@
 
     function redirectToAreYouSureScreen() {
         window.location.href = 'areyousure.html';
+    }
+
+    // ... Existing JavaScript ...
+
+    function redirectToReallyPage() {
+        window.location.href = 'really.html';
     }
 </script>
 
