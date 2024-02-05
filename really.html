@@ -29,8 +29,8 @@
         }
 
         .btn-absolutely {
-            padding: 25px 50px; /* Adjust the button size */
-            font-size: 30px; /* Adjust the font size */
+            padding: 30px 60px; /* Adjust the button size */
+            font-size: 40px; /* Adjust the font size */
             cursor: pointer;
             border: none;
             border-radius: 5px;
@@ -40,14 +40,15 @@
         }
 
         .btn-nope {
-            padding: 25px 50px; /* Adjust the button size */
-            font-size: 30px; /* Adjust the font size */
+            padding: 30px 60px; /* Adjust the button size */
+            font-size: 40px; /* Adjust the font size */
             cursor: pointer;
             border: none;
             border-radius: 5px;
             text-decoration: none;
             background-color: #f44336; /* Red button color */
             color: #fff;
+            display: inline-block; /* Ensure the button takes up space even if hidden */
         }
     </style>
 </head>
@@ -57,7 +58,7 @@
     <img id="really-gif" src="https://media1.tenor.com/m/tZVpbfTIjNMAAAAC/pikachu.gif" alt="Pikachu GIF">
     <div id="really-text">REALLY???</div>
     <button class="btn-absolutely" onclick="redirectToInstagram()">Absolutely</button>
-    <button class="btn-nope" onclick="redirectToMainPage()">Nope</button>
+    <button class="btn-nope" onclick="handleNopeClick()">Nope</button>
 </div>
 
 <script>
@@ -65,8 +66,9 @@
         window.location.href = 'https://www.instagram.com/ozito77_/';
     }
 
-    function redirectToMainPage() {
-        window.location.href = 'index.html';
+    function handleNopeClick() {
+        var btnNope = document.querySelector('.btn-nope');
+        btnNope.style.display = 'none'; // Hide the Nope button
     }
 </script>
 
