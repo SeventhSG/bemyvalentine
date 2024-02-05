@@ -48,6 +48,14 @@
             background-color: #f44336; /* Red button color */
             color: #fff;
         }
+
+        #btn-confirmation-yes.hidden {
+            display: none;
+        }
+
+        #btn-confirmation-no.full-width {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -55,15 +63,20 @@
 <div id="confirmation-container">
     <img id="confirmation-gif" src="https://media1.tenor.com/m/lmA7VALYIAsAAAAC/sad-pikachu.gif" alt="Sad Pikachu GIF">
     <div id="confirmation-text">Are you sure? :(</div>
-    <button id="btn-confirmation-yes" class="btn-confirmation" onclick="closeWindow()">Yes</button>
+    <button id="btn-confirmation-yes" class="btn-confirmation" onclick="hideYesButton()">Yes</button>
     <button id="btn-confirmation-no" class="btn-confirmation" onclick="goBackToMainScreen()">No</button>
 </div>
 
 <script>
-    function closeWindow() {
-        // Open a new window with a data URL containing a small HTML page with a JavaScript function to close the window
-        var newWindow = window.open('data:text/html,<html><body><script>window.close();<\/script></body></html>', '_blank');
-        newWindow.close();
+    function hideYesButton() {
+        var btnYes = document.getElementById('btn-confirmation-yes');
+        var btnNo = document.getElementById('btn-confirmation-no');
+
+        // Hide the "Yes" button and make the "No" button full-width
+        btnYes.classList.add('hidden');
+        btnNo.classList.add('full-width');
+
+        // Optionally, you can add additional actions or styles as needed
     }
 
     function goBackToMainScreen() {
