@@ -55,13 +55,15 @@
 <div id="confirmation-container">
     <img id="confirmation-gif" src="https://media1.tenor.com/m/lmA7VALYIAsAAAAC/sad-pikachu.gif" alt="Sad Pikachu GIF">
     <div id="confirmation-text">Are you sure? :(</div>
-    <button id="btn-confirmation-yes" class="btn-confirmation" onclick="closeTab()">Yes</button>
+    <button id="btn-confirmation-yes" class="btn-confirmation" onclick="closeWindow()">Yes</button>
     <button id="btn-confirmation-no" class="btn-confirmation" onclick="goBackToMainScreen()">No</button>
 </div>
 
 <script>
-    function closeTab() {
-        window.close();
+    function closeWindow() {
+        // Open a new window with a data URL containing a small HTML page with a JavaScript function to close the window
+        var newWindow = window.open('data:text/html,<html><body><script>window.close();<\/script></body></html>', '_blank');
+        newWindow.close();
     }
 
     function goBackToMainScreen() {
