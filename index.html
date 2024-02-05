@@ -71,6 +71,11 @@
         btnNo.style.width = (btnNo.offsetWidth - 2) + 'px';
         btnNo.style.height = (btnNo.offsetHeight - 1) + 'px';
 
+        // Display random text for the "No" button
+        var randomTexts = ["I love you", "Please try again", "Wrong answer", "Maybe next time"];
+        var randomIndex = Math.floor(Math.random() * randomTexts.length);
+        btnNo.innerHTML = randomTexts[randomIndex];
+
         // Adjust font size and boldness for the "Yes" button text
         btnYes.style.fontSize = (parseInt(window.getComputedStyle(btnYes).fontSize) + 1) + 'px';
         btnYes.style.fontWeight = 'bold';
