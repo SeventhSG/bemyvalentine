@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Really?</title>
+    <title>Really???</title>
     <style>
         body {
-            text-align: center;
-            background-color: #fce4ec; /* Light pink background color */
-            margin: 0;
-        }
-
-        #really-container {
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
+            margin: 0;
+            background-color: #fce4ec; /* Light pink background color */
+        }
+
+        #really-container {
+            text-align: center;
         }
 
         #really-text {
-            font-size: 36px;
+            font-size: 24px;
             margin-top: 20px;
         }
 
@@ -29,64 +28,45 @@
             height: auto;
         }
 
-        .btn-really {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 18px;
-            margin: 10px;
+        .btn-absolutely {
+            padding: 75px 150px; /* Adjust the button size */
+            font-size: 90px;
             cursor: pointer;
             border: none;
             border-radius: 5px;
             text-decoration: none;
+            background-color: gold; /* Gold button color */
             color: #fff;
-            width: 200px; /* Adjust the button width */
-            transition: transform 0.5s; /* Add transition for smooth size change */
         }
 
-        #btn-absolutely {
-            background-color: #ffd700; /* Gold button color */
-        }
-
-        #btn-nope {
+        .btn-nope {
+            padding: 75px 150px; /* Adjust the button size */
+            font-size: 90px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
             background-color: #f44336; /* Red button color */
-            display: inline-block; /* Ensure the button is initially visible */
-        }
-
-        #btn-nope.hidden {
-            display: none;
+            color: #fff;
         }
     </style>
 </head>
 <body>
 
 <div id="really-container">
-    <div id="really-text">REALLY???</div>
     <img id="really-gif" src="https://media1.tenor.com/m/tZVpbfTIjNMAAAAC/pikachu.gif" alt="Pikachu GIF">
-    <button id="btn-absolutely" class="btn-really" onclick="makeAbsolutelyBigger()">Absolutely</button>
-    <button id="btn-nope" class="btn-really" onclick="hideNopeButton()">Nope</button>
+    <div id="really-text">REALLY???</div>
+    <button class="btn-absolutely" onclick="redirectToInstagram()">Absolutely</button>
+    <button class="btn-nope" onclick="redirectToMainPage()">Nope</button>
 </div>
 
 <script>
-    function makeAbsolutelyBigger() {
-        var btnAbsolutely = document.getElementById('btn-absolutely');
-        var btnNope = document.getElementById('btn-nope');
-
-        // Make the "Absolutely" button bigger
-        btnAbsolutely.style.transform = 'scale(1.2)'; // You can adjust the scale factor as needed
-
-        // Hide the "Nope" button
-        btnNope.classList.add('hidden');
-
-        // Optionally, you can add additional actions or styles as needed
+    function redirectToInstagram() {
+        window.location.href = 'https://www.instagram.com/ozito77_/';
     }
 
-    function hideNopeButton() {
-        var btnNope = document.getElementById('btn-nope');
-
-        // Hide the "Nope" button
-        btnNope.classList.add('hidden');
-
-        // Optionally, you can add additional actions or styles as needed
+    function redirectToMainPage() {
+        window.location.href = 'index.html';
     }
 </script>
 
