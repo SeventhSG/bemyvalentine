@@ -76,7 +76,7 @@
 </div>
 
 <script>
-    var noButtonClickCount = 0
+    var noButtonClickCount = 0;
 
     function changeButtonSize() {
         var btnYes = document.getElementById('btn-yes');
@@ -105,15 +105,31 @@
         }
     }
 
-    function redirectToAreYouSureScreen() {
-        window.location.href = 'areyousure.html';
+    function moveNoButton() {
+        var btnNo = document.getElementById('btn-no');
+        var valentineContainer = document.getElementById('valentine-container');
+        
+        var randomX = Math.random() * (valentineContainer.offsetWidth - btnNo.offsetWidth);
+        var randomY = Math.random() * (valentineContainer.offsetHeight - btnNo.offsetHeight);
+
+        btnNo.style.transition = 'transform 2s ease'; // Smooth transition over 2 seconds
+        btnNo.style.transform = 'translate(' + randomX + 'px, ' + randomY + 'px)';
+        
+        // Allow the user 2 seconds to click the moving button
+        setTimeout(resetButtonPosition, 2000);
     }
+
+    function resetButtonPosition() {
+        var btnNo = document.getElementById('btn-no');
+        btnNo.style.transition = ''; // Remove the transition
+        btnNo.style.transform = 'translate(0, 0)'; // Reset the button position
+    }
+
+    // Add event listener for mouseover to move the "No" button
+    document.getElementById('btn-no').addEventListener('mouseover', moveNoButton);
 
     // ... Existing JavaScript ...
 
-    function redirectToReallyPage() {
-        window.location.href = 'really.html';
-    }
 </script>
 
 </body>
