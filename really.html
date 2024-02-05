@@ -40,15 +40,16 @@
             text-decoration: none;
             color: #fff;
             width: 200px; /* Adjust the button width */
+            transition: transform 0.5s; /* Add transition for smooth size change */
         }
 
         #btn-absolutely {
             background-color: #ffd700; /* Gold button color */
-            transition: transform 0.5s; /* Add transition for smooth size change */
         }
 
         #btn-nope {
             background-color: #f44336; /* Red button color */
+            display: inline-block; /* Ensure the button is initially visible */
         }
 
         #btn-nope.hidden {
@@ -68,9 +69,13 @@
 <script>
     function makeAbsolutelyBigger() {
         var btnAbsolutely = document.getElementById('btn-absolutely');
+        var btnNope = document.getElementById('btn-nope');
 
         // Make the "Absolutely" button bigger
         btnAbsolutely.style.transform = 'scale(1.2)'; // You can adjust the scale factor as needed
+
+        // Hide the "Nope" button
+        btnNope.classList.add('hidden');
 
         // Optionally, you can add additional actions or styles as needed
     }
