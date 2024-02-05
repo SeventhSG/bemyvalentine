@@ -70,11 +70,9 @@
 <script>
     function hideYesButton() {
         var btnYes = document.getElementById('btn-confirmation-yes');
-        var btnNo = document.getElementById('btn-confirmation-no');
 
-        // Hide the "Yes" button and make the "No" button full-width
-        btnYes.classList.add('hidden');
-        btnNo.classList.add('full-width');
+        // Hide the "Yes" button
+        btnYes.style.display = 'none';
 
         // Optionally, you can add additional actions or styles as needed
     }
@@ -83,6 +81,5 @@
         window.location.href = 'index.html'; // Replace with the actual filename of your main screen
     }
 </script>
-
 </body>
 </html>
