@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Are You Sure?</title>
     <style>
-        /* ... Existing styles ... */
-
-        #confirmation-container {
+        body {
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
             background-color: #fce4ec; /* Light pink background color */
+        }
+
+        #confirmation-container {
+            text-align: center;
         }
 
         #confirmation-gif {
@@ -35,7 +37,15 @@
             border: none;
             border-radius: 5px;
             text-decoration: none;
+        }
+
+        #btn-confirmation-yes {
             background-color: #4caf50; /* Green button color */
+            color: #fff;
+        }
+
+        #btn-confirmation-no {
+            background-color: #f44336; /* Red button color */
             color: #fff;
         }
     </style>
@@ -45,16 +55,16 @@
 <div id="confirmation-container">
     <img id="confirmation-gif" src="https://media1.tenor.com/m/lmA7VALYIAsAAAAC/sad-pikachu.gif" alt="Sad Pikachu GIF">
     <div id="confirmation-text">Are you sure? :(</div>
-    <button id="btn-confirmation-yes" class="btn-confirmation" onclick="goBackToMainScreen()">Yes</button>
-    <button id="btn-confirmation-no" class="btn-confirmation" onclick="redirectToMainScreen()">No</button>
+    <button id="btn-confirmation-yes" class="btn-confirmation" onclick="closeTab()">Yes</button>
+    <button id="btn-confirmation-no" class="btn-confirmation" onclick="goBackToMainScreen()">No</button>
 </div>
 
 <script>
-    function goBackToMainScreen() {
-        window.location.href = 'index.html'; // Replace with the actual filename of your main screen
+    function closeTab() {
+        window.close();
     }
 
-    function redirectToMainScreen() {
+    function goBackToMainScreen() {
         window.location.href = 'index.html'; // Replace with the actual filename of your main screen
     }
 </script>
