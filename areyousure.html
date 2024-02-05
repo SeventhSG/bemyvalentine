@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are You Sure?</title>
+    <style>
+        /* ... Existing styles ... */
+
+        #confirmation-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fce4ec; /* Light pink background color */
+        }
+
+        #confirmation-gif {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #confirmation-text {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .btn-confirmation {
+            display: inline-block;
+            padding: 15px 30px; /* Adjust the initial size */
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            background-color: #4caf50; /* Green button color */
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div id="confirmation-container">
+    <img id="confirmation-gif" src="https://media1.tenor.com/m/lmA7VALYIAsAAAAC/sad-pikachu.gif" alt="Sad Pikachu GIF">
+    <div id="confirmation-text">Are you sure? :(</div>
+    <button id="btn-confirmation-yes" class="btn-confirmation" onclick="goBackToMainScreen()">Yes</button>
+    <button id="btn-confirmation-no" class="btn-confirmation" onclick="redirectToMainScreen()">No</button>
+</div>
+
+<script>
+    function goBackToMainScreen() {
+        window.location.href = 'index.html'; // Replace with the actual filename of your main screen
+    }
+
+    function redirectToMainScreen() {
+        window.location.href = 'index.html'; // Replace with the actual filename of your main screen
+    }
+</script>
+
+</body>
+</html>
