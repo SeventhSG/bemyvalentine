@@ -44,10 +44,15 @@
 
         #btn-absolutely {
             background-color: #ffd700; /* Gold button color */
+            transition: transform 0.5s; /* Add transition for smooth size change */
         }
 
         #btn-nope {
             background-color: #f44336; /* Red button color */
+        }
+
+        #btn-nope.hidden {
+            display: none;
         }
     </style>
 </head>
@@ -56,17 +61,27 @@
 <div id="really-container">
     <div id="really-text">REALLY???</div>
     <img id="really-gif" src="https://media1.tenor.com/m/tZVpbfTIjNMAAAAC/pikachu.gif" alt="Pikachu GIF">
-    <button id="btn-absolutely" class="btn-really" onclick="redirectToInstagram()">Absolutely</button>
-    <button id="btn-nope" class="btn-really" onclick="redirectToMainScreen()">Nope</button>
+    <button id="btn-absolutely" class="btn-really" onclick="makeAbsolutelyBigger()">Absolutely</button>
+    <button id="btn-nope" class="btn-really" onclick="hideNopeButton()">Nope</button>
 </div>
 
 <script>
-    function redirectToInstagram() {
-        window.location.href = 'https://www.instagram.com/ozito77_/';
+    function makeAbsolutelyBigger() {
+        var btnAbsolutely = document.getElementById('btn-absolutely');
+
+        // Make the "Absolutely" button bigger
+        btnAbsolutely.style.transform = 'scale(1.2)'; // You can adjust the scale factor as needed
+
+        // Optionally, you can add additional actions or styles as needed
     }
 
-    function redirectToMainScreen() {
-        window.location.href = 'index.html'; // Replace with the actual filename of your main screen
+    function hideNopeButton() {
+        var btnNope = document.getElementById('btn-nope');
+
+        // Hide the "Nope" button
+        btnNope.classList.add('hidden');
+
+        // Optionally, you can add additional actions or styles as needed
     }
 </script>
 
