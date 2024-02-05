@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Will You Be My Valentine?</title>
-        <style>
+    <style>
         body {
             display: flex;
             align-items: center;
@@ -29,7 +29,6 @@
         }
 
         .btn-yes {
-            /* ... Existing styles ... */
             padding: 75px 150px; /* Adjust the initial size */
             font-size: 90px;
             margin: 50px;
@@ -42,7 +41,6 @@
         }
 
         .btn-no {
-            /* ... Existing styles ... */
             padding: 75px 150px; /* Adjust the initial size */
             font-size: 90px;
             margin: 50px;
@@ -51,7 +49,6 @@
             border-radius: 5px;
             text-decoration: none;
             background-color: #f44336; /* Red button color */
-            color: #fff;
             overflow: hidden; /* Ensure text stays within the button */
         }
 
@@ -72,7 +69,7 @@
     <img id="valentine-gif" src="https://media.tenor.com/dTkq2FK0nMcAAAAi/heart-love.gif" alt="Heart GIF">
     <div id="valentine-text">Will You Be My Valentine?</div>
     <button id="btn-yes" class="btn" onclick="redirectToReallyPage()">Yes</button>
-    <button id="btn-no" class="btn" onclick="changeButtonSize()">No</button>
+    <button id="btn-no" class="btn" onmouseover="moveNoButton()" onclick="changeButtonSize()">No</button>
 </div>
 
 <script>
@@ -81,7 +78,6 @@
     function changeButtonSize() {
         var btnYes = document.getElementById('btn-yes');
         var btnNo = document.getElementById('btn-no');
-        var valentineText = document.getElementById('valentine-text');
 
         btnYes.style.width = (btnYes.offsetWidth + 50) + 'px';
         btnYes.style.height = (btnYes.offsetHeight + 25) + 'px';
@@ -108,28 +104,29 @@
     function moveNoButton() {
         var btnNo = document.getElementById('btn-no');
         var valentineContainer = document.getElementById('valentine-container');
-        
+
+        // Calculate random X and Y coordinates within the container
         var randomX = Math.random() * (valentineContainer.offsetWidth - btnNo.offsetWidth);
         var randomY = Math.random() * (valentineContainer.offsetHeight - btnNo.offsetHeight);
 
+        // Move the "No" button to the random position
         btnNo.style.transition = 'transform 2s ease'; // Smooth transition over 2 seconds
         btnNo.style.transform = 'translate(' + randomX + 'px, ' + randomY + 'px)';
-        
-        // Allow the user 2 seconds to click the moving button
-        setTimeout(resetButtonPosition, 2000);
+
+        // Allow the user 2 seconds before resetting the button position
+        setTimeout(function () {
+            btnNo.style.transition = ''; // Remove the transition
+            btnNo.style.transform = ''; // Reset the button position
+        }, 2000);
     }
 
-    function resetButtonPosition() {
-        var btnNo = document.getElementById('btn-no');
-        btnNo.style.transition = ''; // Remove the transition
-        btnNo.style.transform = 'translate(0, 0)'; // Reset the button position
+    function redirectToAreYouSureScreen() {
+        window.location.href = 'areyousure.html';
     }
 
-    // Add event listener for mouseover to move the "No" button
-    document.getElementById('btn-no').addEventListener('mouseover', moveNoButton);
-
-    // ... Existing JavaScript ...
-
+    function redirectToReallyPage() {
+        window.location.href = 'really.html';
+    }
 </script>
 
 </body>
