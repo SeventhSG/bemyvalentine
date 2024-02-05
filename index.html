@@ -69,11 +69,12 @@
     <img id="valentine-gif" src="https://media.tenor.com/dTkq2FK0nMcAAAAi/heart-love.gif" alt="Heart GIF">
     <div id="valentine-text">Will You Be My Valentine?</div>
     <button id="btn-yes" class="btn" onclick="redirectToReallyPage()">Yes</button>
-    <button id="btn-no" class="btn" onmouseover="moveNoButton()" onclick="changeButtonSize()">No</button>
+    <button id="btn-no" class="btn" onmouseover="startMovingNoButton()" onclick="changeButtonSize()">No</button>
 </div>
 
 <script>
     var noButtonClickCount = 0;
+    var moveInterval;
 
     function changeButtonSize() {
         var btnYes = document.getElementById('btn-yes');
@@ -101,6 +102,11 @@
         }
     }
 
+    function startMovingNoButton() {
+        moveInterval = setInterval(moveNoButton, 2000);
+        moveNoButton(); // Move immediately on click
+    }
+
     function moveNoButton() {
         var btnNo = document.getElementById('btn-no');
         var valentineContainer = document.getElementById('valentine-container');
@@ -112,15 +118,10 @@
         // Move the "No" button to the random position
         btnNo.style.transition = 'transform 2s ease'; // Smooth transition over 2 seconds
         btnNo.style.transform = 'translate(' + randomX + 'px, ' + randomY + 'px)';
-
-        // Allow the user 2 seconds before resetting the button position
-        setTimeout(function () {
-            btnNo.style.transition = ''; // Remove the transition
-            btnNo.style.transform = ''; // Reset the button position
-        }, 2000);
     }
 
     function redirectToAreYouSureScreen() {
+        clearInterval(moveInterval); // Stop moving interval
         window.location.href = 'areyousure.html';
     }
 
