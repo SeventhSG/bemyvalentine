@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fce4ec; /* Light pink background color */
+        }
+
+        #valentine-container {
+            text-align: center;
+        }
+
+        #valentine-text {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        #valentine-gif {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn-yes {
+            padding: 75px 150px; /* Adjust the initial size */
+            font-size: 90px;
+            margin: 50px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            background-color: #4caf50; /* Green button color */
+            color: #fff;
+        }
+
+        .btn-no {
+            padding: 75px 150px; /* Adjust the initial size */
+            font-size: 90px;
+            margin: 50px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            background-color: #f44336; /* Red button color */
+            overflow: hidden; /* Ensure text stays within the button */
+        }
+
+        #btn-yes {
+            background-color: #4caf50; /* Green button color */
+            color: #fff;
+        }
+
+        #btn-no {
+            background-color: #f44336; /* Red button color */
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div id="valentine-container">
+    <img id="valentine-gif" src="https://media.tenor.com/dTkq2FK0nMcAAAAi/heart-love.gif" alt="Heart GIF">
+    <div id="valentine-text">Will You Be My Valentine?</div>
+    <button id="btn-yes" class="btn" onclick="redirectToReallyPage()">Yes</button>
+    <button id="btn-no" class="btn" onmouseover="startMovingNoButton()" onclick="changeButtonSize()">No</button>
+</div>
+
+<script>
+    var noButtonClickCount = 0;
+    var moveInterval;
+
+    function changeButtonSize() {
+        var btnYes = document.getElementById('btn-yes');
+        var btnNo = document.getElementById('btn-no');
+
+        btnYes.style.width = (btnYes.offsetWidth + 50) + 'px';
+        btnYes.style.height = (btnYes.offsetHeight + 25) + 'px';
+
+        btnNo.style.width = (btnNo.offsetWidth - 2) + 'px';
+        btnNo.style.height = (btnNo.offsetHeight - 1) + 'px';
+
+        // Display random text for the "No" button
+        var randomTexts = ["PLS", "ILU", "NOPE", "No"];
+        var randomIndex = Math.floor(Math.random() * randomTexts.length);
+        btnNo.innerHTML = randomTexts[randomIndex];
+
+        // Adjust font size and boldness for the "Yes" button text
+        btnYes.style.fontSize = (parseInt(window.getComputedStyle(btnYes).fontSize) + 1) + 'px';
+        btnYes.style.fontWeight = 'bold';
+
+        // Check if it's the 10th click on the "No" button
+        noButtonClickCount++;
+        if (noButtonClickCount === 3) {
+            redirectToAreYouSureScreen();
+        }
+    }
+
+    function startMovingNoButton() {
+        moveInterval = setInterval(moveNoButton, 2000);
+        moveNoButton(); // Move immediately on click
+    }
+
+    function moveNoButton() {
+        var btnNo = document.getElementById('btn-no');
+        var valentineContainer = document.getElementById('valentine-container');
+
+        // Calculate random X and Y coordinates within the container
+        var randomX = Math.random() * (valentineContainer.offsetWidth - btnNo.offsetWidth);
+        var randomY = Math.random() * (valentineContainer.offsetHeight - btnNo.offsetHeight);
+
+        // Move the "No" button to the random position
+        btnNo.style.transition = 'transform 2s ease'; // Smooth transition over 2 seconds
+        btnNo.style.transform = 'translate(' + randomX + 'px, ' + randomY + 'px)';
+    }
+
+    function redirectToAreYouSureScreen() {
+        clearInterval(moveInterval); // Stop moving interval
+        window.location.href = 'areyousure.html';
+    }
+
+    function redirectToReallyPage() {
+        window.location.href = 'really.html';
+    }
+</script>
+
+</body>
+</html>
